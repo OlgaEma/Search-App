@@ -1,4 +1,4 @@
-import { fetchData } from './api.js'; 
+import { fetchData } from '../js/api.js';
 import { jest } from '@jest/globals';
 
 describe('fetchData', () => {
