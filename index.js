@@ -19,18 +19,31 @@ const downloadFile = () => {
     URL.revokeObjectURL(url);
 };
 
-// Attach event listener AFTER defining the function
+
 document.getElementById('downloadButton').addEventListener('click', downloadFile);
 
 document.getElementById('searchQuery').addEventListener('keydown', async (event) => {
     if (event.key === 'Enter') {
         const query = document.getElementById('searchQuery').value;
         try {
-            currentData = await fetchData(query); // Update currentData correctly
+            currentData = await fetchData(query); 
             displayResults(currentData);
         } catch (error) {
             console.error('Fetch error:', error.message);
             displayError(error);
+        }
+    }
+});
+
+document.getElementById('searchQuery').addEventListener('keydown', async (event) => {
+    if (event.key === 'Enter') {
+        try {
+            const query = document.getElementById('searchQuery').value;
+            const data = await fetchData(query);
+            
+        } catch (error) {
+            console.error('Error fetching data:', error);
+           
         }
     }
 });
