@@ -27,4 +27,3 @@ describe('fetchData', () => {
     await expect(fetchData("test")).rejects.toThrow("HTTP error! Status: 404");
   });
 });
-
